@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules:[
-
+    '@vueuse/nuxt',
   ],
-  plugins: [{ src: "~/plugins/gsap.js" }],
+
   postcss: {
     plugins: {
       tailwindcss: {},
