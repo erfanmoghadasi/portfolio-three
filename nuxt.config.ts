@@ -1,9 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
   modules:[
     '@vueuse/nuxt',
+    'nuxt-icons',
+    '@nuxt/image-edge',
   ],
-
   postcss: {
     plugins: {
       tailwindcss: {},

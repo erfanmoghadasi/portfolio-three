@@ -78,9 +78,9 @@ const updateRenderer = () => {
 let controls: OrbitControls;
 const setRenderer = () => {
   if (canvasEl.value) {
-    renderer = new WebGLRenderer({ canvas: canvasEl.value, alpha: true });
+    renderer = new WebGLRenderer({ canvas: canvasEl.value, alpha: true, antialias : false });
     updateRenderer();
-    renderer.setPixelRatio(2);
+    renderer.setPixelRatio(1);
     //Controls
     controls = new OrbitControls(camera, canvasEl.value);
     controls.enableDamping = true;

@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "digidon";
+    src: url('assets/fonts/Digidon.ttf')  format('truetype')
+}
+@font-face {
+    font-family: "pascal";
+    src: url('assets/fonts/Pascal.ttf')  format('truetype')
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-y: overlay;
+  }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #353738;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
