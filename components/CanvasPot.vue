@@ -17,8 +17,8 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
-import GLTFLoader from 'three-gltf-loader';
+import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
+
 
 
 //Scene
@@ -45,7 +45,6 @@ gltfLoader.load("./Three/raven/scene.gltf", (gltf) => {
   gltf.scene.position.y = -10;
   gltf.scene.position.z = 0;
   scene.add(gltf.scene);
-  console.log(gltf);
 });
 
 // Camera
