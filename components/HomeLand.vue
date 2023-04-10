@@ -1,6 +1,7 @@
 <template>
   <div class="relative">
     <div
+      v-if="isHello"
       id="hello"
       class="absolute flex w-screen h-screen overflow-hidden top-0 left-0 z-50"
     >
@@ -71,9 +72,13 @@
 <script setup lang="ts">
 import CanvasPot from "./CanvasPot.vue";
 import Loading from "./Loading.vue";
+
 const { $gsap } = useNuxtApp();
 const tl = $gsap.timeline();
+
 const isLoad = ref(false);
+const isHello = ref(true)
+
 onMounted(() => {
   tl.to("#hello span", {
     y: "-100%",
@@ -152,6 +157,9 @@ onMounted(() => {
   setTimeout(() => {
     isLoad.value = true;
   }, 5000);
+  setTimeout(() => {
+    isHello.value = false;
+  }, 3000);
 });
 </script>
 
