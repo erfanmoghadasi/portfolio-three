@@ -16,10 +16,13 @@
       <HomeLand />
     </ClientOnly>
     <Introduction />
+    <Examples />
   </div>
 </template>
 
 <script setup lang="ts">
+import Examples from '~/components/Examples.vue';
+
 const mainEl = ref();
 
 onMounted(() => {
