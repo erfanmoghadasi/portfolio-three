@@ -1,11 +1,9 @@
 import { gsap } from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(CSSPlugin);
-
-// export default ({ app }: any, inject: (arg0: string, arg1: typeof globalThis.gsap) => void) => {
-//     inject("gsap", gsap);
-//   };
+gsap.registerPlugin(ScrollTrigger);
 
 export default defineNuxtPlugin(() => {
   return{

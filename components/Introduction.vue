@@ -1,0 +1,100 @@
+<template>
+  <div class="flex relative w-full h-screen px-20 py-16">
+    <!-- ----------------------- lines ---------------------- -->
+    <span class="absolute left-24 w-[1px] h-5/6 bg-slate-300" />
+    <span class="absolute left-14 bottom-20 w-11/12 h-[1px] bg-slate-300" />
+
+    <!-- ---------------------------- triangle ------------------- -->
+    <span class="absolute -right-40 top-40 w-80 h-80 bg-slate-700 rotate-45">
+    </span>
+
+    <!-- ---------------------------- left section ------------------- -->
+    <div class="w-1/3 h-full z-20 flex flex-col items-center gap-10">
+      <div
+        id="glass"
+        ref="glass"
+        class="w-[300px] h-[300px] mt-10 rounded-full flex justify-center items-center aspect-square"
+      >
+        <nuxt-img src="images/profile.png" class="w-[200px]" />
+      </div>
+      <div class="flex justify-center items-center gap-5">
+        <NuxtIcon
+          name="link"
+          class="text-3xl hover:shadow-[0px_5px_5px_0px_rgba(30,30,30,1)] transition-all hover:text-white text-sky-600 cursor-pointer"
+        />
+        <NuxtIcon
+          name="github"
+          class="text-3xl hover:shadow-[0px_5px_5px_0px_rgba(30,30,30,1)] transition-all hover:text-white text-slate-600 cursor-pointer"
+        />
+      </div>
+    </div>
+
+    <!-- ---------------------------- right section ------------------- -->
+    <div
+      class="w-2/3 z-10 h-full px-20 text-white text-xl flex flex-col gap-10 mt-20"
+    >
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 bg-slate-600 rounded-full inline-block" />
+        <span> My name is </span>
+        <span class="text-3xl font-bold text-cyan-300"> Erfan Moghadasi </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 bg-slate-600 rounded-full inline-block" />
+        <span> I'm a Front-End Developer .</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 bg-slate-600 rounded-full inline-block" />
+        <span> I have +1 year experience .</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 bg-slate-600 rounded-full inline-block" />
+        <span>
+          I love challenges, team works and develop modern designs .
+        </span>
+      </div>
+      <div class="aut flex items-center gap-3 text-lg">
+        <nuxt-img src="images/aut.png" class="w-12" />
+        <span
+          >Bachelor degree in Mining engineering in Arak university of
+          Technology .</span
+        >
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const { $gsap } = useNuxtApp();
+const glass = ref();
+
+onMounted(() => {
+  const tl = $gsap.timeline({
+    scrollTrigger: {
+      trigger: "#glass",
+      start: `top center`,
+    },
+  });
+  tl.from("#glass", {
+    scale: 1.3,
+    duration: 1,
+    ease: "power3.In",
+    css: {
+      filter: "grayscale(50%)",
+      "-webkit-filter": "grayscale(50%)",
+      background: 'rgba(255, 255, 255, 1)',
+      scale: "1.1",
+    },
+  });
+});
+</script>
+
+<style scoped>
+#glass {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  /* border-radius: 10px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+</style>

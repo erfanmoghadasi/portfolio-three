@@ -7,8 +7,12 @@
     src: url('assets/fonts/Digidon.ttf')  format('truetype')
 }
 @font-face {
-    font-family: "pascal";
-    src: url('assets/fonts/Pascal.ttf')  format('truetype')
+    font-family: "aetherius";
+    src: url('assets/fonts/Aetherius.ttf')  format('truetype')
+}
+@font-face {
+    font-family: "shadded";
+    src: url('assets/fonts/Shadded.ttf')  format('truetype')
 }
 
 html {

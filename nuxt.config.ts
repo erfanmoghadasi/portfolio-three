@@ -1,11 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr:false,
-  modules:[
-    '@vueuse/nuxt',
-    'nuxt-icons',
-    '@nuxt/image-edge',
-  ],
+  ssr: false,
+  modules: ["@vueuse/nuxt", "nuxt-icons", "@nuxt/image-edge"],
 
   postcss: {
     plugins: {

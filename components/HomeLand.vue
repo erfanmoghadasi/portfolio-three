@@ -1,19 +1,6 @@
 <template>
   <div class="relative">
-    <div
-      v-if="isHello"
-      id="hello"
-      class="absolute flex w-screen h-screen overflow-hidden top-0 left-0 z-50"
-    >
-      <span class="w-1/5 h-screen bg-black"></span>
-      <span class="w-1/5 h-screen bg-black"></span>
-      <span
-        class="w-1/5 h-screen bg-black text-white flex items-center text-center justify-center"
-        >HELLO . . .</span
-      >
-      <span class="w-1/5 h-screen bg-black"></span>
-      <span class="w-1/5 h-screen bg-black"></span>
-    </div>
+    <!-- <Hello /> -->
     <div
       id="container"
       class="flex relative items-center overflow-hidden w-screen h-screen shadow-[inset_0_60px_25px_rgba(0,0,0,0.2)]"
@@ -29,17 +16,9 @@
         <NuxtIcon name="telegram" class="social-child text-slate-300 text-sm" />
         <NuxtIcon name="whatsapp" class="social-child text-slate-300 text-sm" />
       </div>
-      <!-- <span
-      id="left-circle"
-      class="absolute shadow w-96 h-96 scale-125 rounded-full bg-slate-700 -left-28 -bottom-32"
-    />
-    <span
-      id="right-circle"
-      class="absolute shadow w-96 h-96 scale-[2] rounded-full bg-slate-500 -right-28 -top-32"
-    /> -->
       <h4
         id="portfolio"
-        class="absolute top-5 left-10 text-slate-100 font-thin"
+        class="absolute top-5 left-10 text-slate-100 font-black tracking-[5px]"
       >
         PORTFOLIO
       </h4>
@@ -63,7 +42,7 @@
         </button>
       </div>
       <div class="w-1/2">
-        <component :is="isLoad ? CanvasPot : Loading" />
+        <!-- <component :is="isLoad ? CanvasPot : Loading" /> -->
       </div>
     </div>
   </div>
@@ -77,7 +56,6 @@ const { $gsap } = useNuxtApp();
 const tl = $gsap.timeline();
 
 const isLoad = ref(false);
-const isHello = ref(true)
 
 onMounted(() => {
   tl.to("#hello span", {
@@ -148,7 +126,7 @@ onMounted(() => {
         opacity: 0,
         translateY: 20,
         stagger: {
-          amount: 1 
+          amount: 1,
         },
         ease: "power4.out",
       },
@@ -157,15 +135,13 @@ onMounted(() => {
   setTimeout(() => {
     isLoad.value = true;
   }, 5000);
-  setTimeout(() => {
-    isHello.value = false;
-  }, 3000);
+
 });
 </script>
 
 <style scoped>
 #portfolio {
-  font-family: "pascal";
+  font-family: "shadded";
 }
 #title {
   font-family: "digidon";
