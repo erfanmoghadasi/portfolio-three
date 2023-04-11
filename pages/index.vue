@@ -23,7 +23,6 @@
 const mainEl = ref();
 
 onMounted(() => {
-  console.log();
   setTimeout(() => {
     mainEl.value.classList.remove("h-screen");
     mainEl.value.classList.add("min-h-fit");
