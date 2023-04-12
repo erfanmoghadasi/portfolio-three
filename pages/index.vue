@@ -17,6 +17,7 @@
     </ClientOnly>
     <Introduction />
     <Examples />
+    <Skills />
   </div>
 </template>
 
