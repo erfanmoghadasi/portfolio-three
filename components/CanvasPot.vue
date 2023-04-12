@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {
   AmbientLight,
   AmbientLightProbe,
@@ -39,13 +39,7 @@ const aspectRatio = computed(() => width.value / height.value);
 // const mesh = new Mesh(geometry, material);
 // scene.add(mesh);
 
-const gltfLoader = new GLTFLoader();
-gltfLoader.load("./Three/raven/scene.gltf", (gltf) => {
-  gltf.scene.position.x = 0;
-  gltf.scene.position.y = -10;
-  gltf.scene.position.z = 0;
-  scene.add(gltf.scene);
-});
+
 
 // Camera
 const camera = new PerspectiveCamera(45, aspectRatio.value, 0.1, 100);
@@ -105,6 +99,13 @@ const loop = () => {
 };
 
 onMounted(() => {
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.load("./Three/raven/scene.gltf", (gltf) => {
+    gltf.scene.position.x = 0;
+    gltf.scene.position.y = -10;
+    gltf.scene.position.z = 0;
+    scene.add(gltf.scene);
+  });
   setRenderer();
   loop();
 });
