@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <canvas class="-translate-x-80" ref="canvasEl" />
-  </div>
+    <div>
+        <canvas class="-translate-x-80" ref="canvasEl" />
+    </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
   AmbientLight,
   AmbientLightProbe,
@@ -18,6 +18,8 @@ import {
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
+
+
 
 //Scene
 const scene = new Scene();
@@ -36,6 +38,14 @@ const aspectRatio = computed(() => width.value / height.value);
 // });
 // const mesh = new Mesh(geometry, material);
 // scene.add(mesh);
+
+const gltfLoader = new GLTFLoader();
+gltfLoader.load("./Three/raven/scene.gltf", (gltf) => {
+  gltf.scene.position.x = 0;
+  gltf.scene.position.y = -10;
+  gltf.scene.position.z = 0;
+  scene.add(gltf.scene);
+});
 
 // Camera
 const camera = new PerspectiveCamera(45, aspectRatio.value, 0.1, 100);
@@ -58,7 +68,7 @@ light4.position.set(-15, 1, -6);
 scene.add(light4);
 
 //Renderer
-let renderer;
+let renderer: WebGLRenderer;
 const canvasEl = ref(null);
 
 const updateRenderer = () => {
@@ -66,14 +76,10 @@ const updateRenderer = () => {
   renderer.render(scene, camera);
 };
 
-let controls;
+let controls: OrbitControls;
 const setRenderer = () => {
   if (canvasEl.value) {
-    renderer = new WebGLRenderer({
-      canvas: canvasEl.value,
-      alpha: true,
-      antialias: false,
-    });
+    renderer = new WebGLRenderer({ canvas: canvasEl.value, alpha: true, antialias : false });
     updateRenderer();
     renderer.setPixelRatio(1);
     //Controls
@@ -99,16 +105,11 @@ const loop = () => {
 };
 
 onMounted(() => {
-  const gltfLoader = new GLTFLoader();
-  gltfLoader.load("./Three/raven/scene.gltf", (gltf) => {
-    gltf.scene.position.x = 0;
-    gltf.scene.position.y = -10;
-    gltf.scene.position.z = 0;
-    scene.add(gltf.scene);
-  });
   setRenderer();
   loop();
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
