@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <!-- <Hello /> -->
+    <Hello />
     <div
       id="container"
       class="flex relative items-center overflow-hidden w-screen h-screen shadow-[inset_0_60px_25px_rgba(0,0,0,0.2)]"
@@ -42,7 +42,7 @@
         </button>
       </div>
       <div class="w-1/2">
-        <!-- <component :is="isLoad ? CanvasPot : Loading" /> -->
+        <component :is="isLoad ? CanvasPot : Loading" />
       </div>
     </div>
   </div>

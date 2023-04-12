@@ -1,5 +1,5 @@
 <template>
-  <div class="flex relative w-full h-screen px-20 py-16">
+  <div class="contain flex relative w-full h-screen px-20 py-16">
     <!-- ----------------------- lines ---------------------- -->
     <span id="h-line" class="absolute left-24 w-[1px] h-5/6 bg-slate-300" />
     <span
@@ -76,8 +76,8 @@ const { $gsap } = useNuxtApp();
 onMounted(() => {
   const tl = $gsap.timeline({
     scrollTrigger: {
-      trigger: "#glass",
-      start: `top 20%`,
+      trigger: ".contain",
+      start: `top 70%`,
     },
   });
   tl.from("#glass", {
