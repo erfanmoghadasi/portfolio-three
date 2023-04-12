@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <canvas class="-translate-x-80" ref="canvasEl" />
-    </div>
+  <div>
+    <canvas class="-translate-x-80" ref="canvasEl" />
+  </div>
 </template>
 
 <script setup>
@@ -18,8 +18,6 @@ import {
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
-
-
 
 //Scene
 const scene = new Scene();
@@ -38,8 +36,6 @@ const aspectRatio = computed(() => width.value / height.value);
 // });
 // const mesh = new Mesh(geometry, material);
 // scene.add(mesh);
-
-
 
 // Camera
 const camera = new PerspectiveCamera(45, aspectRatio.value, 0.1, 100);
@@ -62,7 +58,7 @@ light4.position.set(-15, 1, -6);
 scene.add(light4);
 
 //Renderer
-let renderer: WebGLRenderer;
+let renderer;
 const canvasEl = ref(null);
 
 const updateRenderer = () => {
@@ -70,10 +66,14 @@ const updateRenderer = () => {
   renderer.render(scene, camera);
 };
 
-let controls: OrbitControls;
+let controls;
 const setRenderer = () => {
   if (canvasEl.value) {
-    renderer = new WebGLRenderer({ canvas: canvasEl.value, alpha: true, antialias : false });
+    renderer = new WebGLRenderer({
+      canvas: canvasEl.value,
+      alpha: true,
+      antialias: false,
+    });
     updateRenderer();
     renderer.setPixelRatio(1);
     //Controls
@@ -111,6 +111,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
