@@ -105,7 +105,7 @@
     </ClientOnly> -->
       <div class="slider w-full h-full flex items-center justify-around">
         <div v-for="s in slides" class="w-1/5 p-14 grayscale-[20%]">
-          <nuxt-img :src="s" />
+          <img :src="s" />
         </div>
       </div>
     </div>
