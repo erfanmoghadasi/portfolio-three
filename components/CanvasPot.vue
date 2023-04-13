@@ -17,8 +17,8 @@ import {
   WebGLRenderer,
 } from "three/build/three.module.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
-import GLTFLoader from 'three-gltf-loader';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+// import GLTFLoader from 'three-gltf-loader';
 
 
 //Scene
