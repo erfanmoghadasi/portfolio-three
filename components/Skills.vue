@@ -1,40 +1,40 @@
 <template>
-  <div id="contain" class="w-full h-screen relative">
+  <div id="contain" class="w-full h-[80vh] sm:h-screen relative">
     <h2
       class="absolute header top-7 left-0 w-full text-center text-zinc-200 text-xl"
     >
       My Skills
     </h2>
-    <div class="h-1/3 w-full px-28 pt-20 flex gap-20">
-      <NuxtIcon name="vue-icon" class="vue text-9xl" filled />
-      <NuxtIcon name="nuxt" class="up-sec text-9xl scale-125" filled />
+    <div class="h-1/3 w-full sm:px-28 px-5 pt-20 flex items-center gap-3 sm:gap-20">
+      <NuxtIcon name="vue-icon" class="vue text-5xl sm:text-9xl" filled />
+      <NuxtIcon name="nuxt" class="up-sec text-6xl sm:text-9xl scale-125" filled />
       <div class="up-sec flex items-end">
-        <NuxtIcon name="pinia" class="text-9xl" filled />
-        <span class="text-2xl text-yellow-400 drop-shadow font-mono font-thin"
+        <NuxtIcon name="pinia" class="text-5xl sm:text-9xl" filled />
+        <span class="text-lg sm:text-2xl text-yellow-400 drop-shadow font-mono font-thin"
           >Pinia</span
         >
       </div>
-      <NuxtIcon name="vuetify" class="up-sec text-9xl scale-125" filled />
+      <NuxtIcon name="vuetify" class="up-sec text-5xl sm:text-9xl scale-125" filled />
       <div class="up-sec flex items-end gap-5">
-        <nuxt-img src="images/formkit.webp" class="text-9xl" filled />
-        <span class="text-xl text-amber-300 drop-shadow font-mono font-thin"
+        <nuxt-img src="images/formkit.webp" class=" text-5xl sm:text-9xl w-10 sm:min-w-fit" filled />
+        <span class="sm:text-xl text-amber-300 drop-shadow font-mono font-thin"
           >Formkit</span
         >
       </div>
     </div>
-    <div class="h-1/3 w-full px-28 flex flex-row-reverse gap-20 pt-10">
-      <NuxtIcon name="react-icon" class="react text-9xl" filled />
+    <div class="h-1/3 w-full sm:px-28 px-5 flex flex-row-reverse items-center sm:items-start gap-3 sm:gap-20 pt-10">
+      <NuxtIcon name="react-icon" class="react  text-5xl sm:text-9xl" filled />
       <div class="mid-sec flex gap-3 pt-4">
-        <NuxtIcon name="nextjs-icon" class="text-8xl text-white" />
-        <NuxtIcon name="next" class="text-8xl" filled />
+        <NuxtIcon name="nextjs-icon" class="text-5xl sm:text-8xl text-white" />
+        <NuxtIcon name="next" class="text-5xl sm:text-8xl" filled />
       </div>
       <div class="mid-sec flex gap-3 pt-4">
         <span class="text-sky-500">MaterialUI</span>
-        <NuxtIcon name="material" class="text-8xl" filled />
+        <NuxtIcon name="material" class="text-5xl sm:text-8xl" filled />
       </div>
       <div class="mid-sec flex gap-3 pt-4">
         <span class="text-purple-400 pt-16">Redux</span>
-        <NuxtIcon name="redux" class="text-8xl" filled />
+        <NuxtIcon name="redux" class="text-5xl sm:text-8xl" filled />
       </div>
       <div class="mid-sec flex gap-3 pt-4">
         <span
@@ -104,7 +104,7 @@
       </Swiper>
     </ClientOnly> -->
       <div class="slider w-full h-full flex items-center justify-around">
-        <div v-for="s in slides" class="w-1/5 p-14 grayscale-[20%]">
+        <div v-for="s in slides" class="w-1/5 max-h-full sm:p-14 px-3 grayscale-[20%]">
           <img :src="s" />
         </div>
       </div>

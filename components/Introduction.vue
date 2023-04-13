@@ -1,10 +1,10 @@
 <template>
-  <div class="contain flex relative w-full h-screen px-20 py-16">
+  <div class="contain flex flex-col sm:flex-row items-center relative w-full min-h-fit sm:h-screen sm:px-20 py-16">
     <!-- ----------------------- lines ---------------------- -->
-    <span id="h-line" class="absolute left-24 w-[1px] h-5/6 bg-slate-300" />
+    <span id="h-line" class="absolute left-5 sm:left-24 w-[1px] h-full sm:h-5/6 bg-slate-300" />
     <span
       id="v-line"
-      class="absolute left-14 bottom-20 w-11/12 h-[1px] bg-slate-300"
+      class="absolute left-0 sm:left-14 bottom-0 sm:bottom-20 w-full sm:w-11/12 h-[1px] bg-slate-300"
     />
 
     <!-- ---------------------------- triangle ------------------- -->
@@ -18,9 +18,9 @@
     <div class="w-1/3 h-full z-20 flex flex-col items-center gap-10">
       <div
         id="glass"
-        class="w-[250px] h-[250px] mt-10 rounded-full flex justify-center items-center aspect-square"
+        class="w-[170px] sm:w-[250px] h-[170px] sm:h-[250px] mt-10 rounded-full flex justify-center items-center aspect-square"
       >
-        <nuxt-img src="images/profile.png" class="w-[170px]" />
+        <nuxt-img src="images/profile.png" class="w-[120px] sm:w-[170px]" />
       </div>
       <div class="flex justify-center items-center gap-5">
         <NuxtIcon
@@ -36,12 +36,12 @@
 
     <!-- ---------------------------- right section ------------------- -->
     <div
-      class="w-2/3 z-10 h-full px-20 text-white text-xl flex flex-col gap-10 mt-20"
+      class="w-full px-10 sm:w-2/3 z-10 h-full sm:px-20 text-white text-xl flex flex-col gap-10 mt-20"
     >
       <div class="flex items-center gap-3">
         <span class="dot w-2 h-2 bg-slate-600 rounded-full inline-block" />
-        <span class="txt"> My name is </span>
-        <span class="txt text-3xl font-bold text-cyan-300">
+        <span class="txt min-w-fit sm:text-base"> My name is </span>
+        <span class="txt sm:text-3xl min-w-fit font-bold text-cyan-300">
           Erfan Moghadasi
         </span>
       </div>
@@ -54,7 +54,7 @@
         <span class="txt"> I have +1 year experience .</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="dot w-2 h-2 bg-slate-600 rounded-full inline-block" />
+        <span class="dot min-w-fit w-2 h-2 bg-slate-600 rounded-full inline-block" />
         <span class="txt">
           I love challenges, team works and develop modern designs .
         </span>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <canvas class="-translate-x-80" ref="canvasEl" />
+        <canvas class=" -translate-x-32 translate-y-10 sm:translate-y-0 scale-75 sm:scale-100 sm:-translate-x-80" ref="canvasEl" />
     </div>
 </template>
 
