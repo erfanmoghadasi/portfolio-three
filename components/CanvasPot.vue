@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {
   AmbientLight,
   AmbientLightProbe,
@@ -17,8 +17,8 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
 // import { GLTFLoader } from "THREE/examples/jsm/loaders/GLTFLoader.js";
-import GLTFLoader from 'three-gltf-loader';
 
 
 //Scene
@@ -68,7 +68,7 @@ light4.position.set(-15, 1, -6);
 scene.add(light4);
 
 //Renderer
-let renderer: WebGLRenderer;
+let renderer
 const canvasEl = ref(null);
 
 const updateRenderer = () => {
@@ -76,7 +76,7 @@ const updateRenderer = () => {
   renderer.render(scene, camera);
 };
 
-let controls: OrbitControls;
+let controls
 const setRenderer = () => {
   if (canvasEl.value) {
     renderer = new WebGLRenderer({ canvas: canvasEl.value, alpha: true, antialias : false });
